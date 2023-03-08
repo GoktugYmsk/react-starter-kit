@@ -3,19 +3,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
 import Test from '../src/components/Test';
+import Useref from './components/Useref';
+import UseReducer from '../src/components/UseReducer';
 
-
+import './App.css'
 
 function App() {
   const [show, setShow] = useState(false)
 
 
-  return (
-    <div>
+  return ( 
+    <div className='App' >
       <button onClick={() => setShow(show => !show)} >
         {show ? 'Gizle' : 'Göster'}
       </button>
-      {show && <Test />}
+      {/*show && <Test />*/}
+      {/* <Useref/> */}
+      <UseReducer/>
     </div>
   );
 }
