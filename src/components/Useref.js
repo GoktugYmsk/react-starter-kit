@@ -1,26 +1,29 @@
-import React, { forwardRef } from 'react'
-import { useRef } from 'react'
+import React, { forwardRef, useRef } from 'react';
 
-function   Input(props,ref) {
-    return <input ref={ref} type="text" {...props} />
-}
-
-Input = forwardRef(Input)
+const MyComponent = forwardRef((props, ref) => {
+  return <input type="text" ref={ref} />;
+});
 
 function Useref() {
-    const inputRef = useRef()
-    const focusInput = () => {
-        inputRef.current.focus()
-    }
+  const inputRef = useRef();
 
-    return (
-        <div>
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
 
-            <input type='text' ref={inputRef} />
-            <Input ref={inputRef} />
-            <button onClick={focusInput}>focusla </button>
-        </div>
-    )
+  const forwardRef = useRef();
+  const handleClick = () => {
+    forwardRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={focusInput}>Focusla</button>
+      <MyComponent ref={forwardRef} />
+      <button onClick={handleClick}>Forward Focusla</button>
+    </div>
+  );
 }
 
-export default Useref
+export default Useref;

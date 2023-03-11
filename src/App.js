@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import { Route, Routes, Link, NavLink } from 'react-router-dom';
 
 import Test from '../src/components/Test';
 import Useref from './components/Useref';
 import UseReducer from '../src/components/UseReducer';
 import Memo from './components/Memo';
-
+import Form from './components/Form';
+import Context from './components/Context';
+import ReactRouter from './components/reactrouter/ReactRouter'
+import CreateElement from './components/createElement/CreateElement';
 import './App.css'
+
+
 
 function App() {
   const [show, setShow] = useState(false)
@@ -19,9 +25,13 @@ function App() {
         {show ? 'Gizle' : 'Göster'}
       </button>
       {/* show && <Test /> */}
-      {/* <Useref/> */}
       {/* <UseReducer/> */}
-      <Memo/>
+      <Memo />
+      <Form />
+      {/* <Context/> */}
+      <CreateElement />
+      <ReactRouter />
+      <Useref />
     </div>
   );
 }
