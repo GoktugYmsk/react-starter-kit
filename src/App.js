@@ -25,7 +25,7 @@ function App() {
         {show ? 'Gizle' : 'Göster'}
       </button>
       {/* show && <Test /> */}
-      {/* <UseReducer/> */}
+      <UseReducer />
       <Memo />
       <Form />
       {/* <Context/> */}
